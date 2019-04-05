@@ -1,0 +1,373 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Площадь</title>
+
+    <link rel="stylesheet" href="bootstrap-3.4.0-dist/css/bootstrap.min.css">
+
+  </head>
+  <body>
+	<nav class="navbar navbar-default">
+	  <div class="container">
+		<div class="navbar-header">
+		  <a class="navbar-brand" href="index.html">Конвертёр</a>
+		</div>
+	  </div>
+	</nav>
+	<div class="container"> 
+		<ol class="breadcrumb">
+		  <li><a href="index.html">Главная</a></li>
+		  <li class="active">Площадь</li>
+		</ol>
+		<div style="width:45%;float:left;">
+			<input type="number" class="form-control" value="" ID="startInput">
+			<select class="form-control" ID="startSelect">
+				<option value="0">Квадратные сантиметры</option>
+				<option value="1">Квадратные метры</option>
+				<option value="2">Квадратные километры</option>
+				<option value="3">Квадратные мили</option>
+				<option value="4">Квадратные футы</option>
+				<option value="5">Квадратные дюймы</option>
+				<option value="6">Гектары</option>
+				<option value="7">Акры</option>
+			</select>
+		</div>
+		<div style="width:10%;float:left; text-align:center">
+			<button type="button" class="btn btn-primary" id="buttonLength">=</button>
+		</div>
+		<div style="width:45%;float:left;">
+			<input type="number" class="form-control" disabled value="" ID="endInput">
+			<select class="form-control" ID="endSelect">
+				<option value="0">Квадратные сантиметры</option>
+				<option value="1">Квадратные метры</option>
+				<option value="2">Квадратные километры</option>
+				<option value="3">Квадратные мили</option>
+				<option value="4">Квадратные футы</option>
+				<option value="5">Квадратные дюймы</option>
+				<option value="6">Гектары</option>
+				<option value="7">Акры</option>
+			</select>
+		</div>
+	</div>
+	
+    <script src="scripts/jquery.js" ></script>
+    <script src="bootstrap-3.4.0-dist/js/bootstrap.min.js" ></script>
+	<script>
+		$("#buttonLength").click(function(){count()});
+		function count(){
+			var startInput = $("#startInput").val();
+			var startSelect = $("#startSelect").val();
+			var endSelect = $("#endSelect").val();
+			
+			switch(startSelect){
+				case '0':  
+					switch(endSelect){
+						case '0':  
+							var endInput = startInput;
+							$("#endInput").val(endInput);
+						break
+						case '1':  
+							var endInput = startInput*0.0021;
+							$("#endInput").val(endInput);
+						break
+						case '2':  
+							var endInput = startInput*0.0000000001;
+							$("#endInput").val(endInput);
+						break
+						case '3':  
+							var endInput = startInput*3.86e-11;
+							$("#endInput").val(endInput);
+						break
+						case '4':  
+							var endInput = startInput*0.0011;
+							$("#endInput").val(endInput);
+						break
+						case '5':  
+							var endInput = startInput*0.16;
+							$("#endInput").val(endInput);
+						break
+						case '6':  
+							var endInput = startInput*1e-8;
+							$("#endInput").val(endInput);
+						break
+						case '7':  
+							var endInput = startInput*2.47e-8;
+							$("#endInput").val(endInput);
+						break
+					}
+				break
+			}
+switch(startSelect){
+				case '1':  
+					switch(endSelect){
+						case '0':  
+							var endInput = startInput*10000;
+							$("#endInput").val(endInput);
+						break
+						case '1':  
+							var endInput = startInput;
+							$("#endInput").val(endInput);
+						break
+						case '2':  
+							var endInput = startInput*0.000001;
+							$("#endInput").val(endInput);
+						break
+						case '3':  
+							var endInput = startInput*3.86e-7;
+							$("#endInput").val(endInput);
+						break
+						case '4':  
+							var endInput = startInput*10.76;
+							$("#endInput").val(endInput);
+						break
+						case '5':  
+							var endInput = startInput*1550;
+							$("#endInput").val(endInput);
+						break
+						case '6':  
+							var endInput = startInput*0.0001;
+							$("#endInput").val(endInput);
+						break
+						case '7':  
+							var endInput = startInput*0.00025;
+							$("#endInput").val(endInput);
+						break
+					}
+				break
+			}
+			switch(startSelect){
+				case '2':  
+					switch(endSelect){
+						case '0':  
+							var endInput = startInput*10000000000;
+							$("#endInput").val(endInput);
+						break
+						case '1':  
+							var endInput = startInput*1000000;
+							$("#endInput").val(endInput);
+						break
+						case '2':  
+							var endInput = startInput;
+							$("#endInput").val(endInput);
+						break
+						case '3':  
+							var endInput = startInput*0.39;
+							$("#endInput").val(endInput);
+						break
+						case '4':  
+							var endInput = startInput*10763910.42;
+							$("#endInput").val(endInput);
+						break
+						case '5':  
+							var endInput = startInput*1550003100.01;
+							$("#endInput").val(endInput);
+						break
+						case '6':  
+							var endInput = startInput*100;
+							$("#endInput").val(endInput);
+						break
+						case '7':  
+							var endInput = startInput*247.11;
+							$("#endInput").val(endInput);
+						break
+					}
+				break
+			}
+			switch(startSelect){
+				case '3':  
+					switch(endSelect){
+						case '0':  
+							var endInput = startInput*25899881103.36;
+							$("#endInput").val(endInput);
+						break
+						case '1':  
+							var endInput = startInput*2589988.11;
+							$("#endInput").val(endInput);
+						break
+						case '2':  
+							var endInput = startInput*2.59;
+							$("#endInput").val(endInput);
+						break
+						case '3':  
+							var endInput = startInput;
+							$("#endInput").val(endInput);
+						break
+						case '4':  
+							var endInput = startInput*27878400;
+							$("#endInput").val(endInput);
+						break
+						case '5':  
+							var endInput = startInput*4014489600;
+							$("#endInput").val(endInput);
+						break
+						case '6':  
+							var endInput = startInput*259;
+							$("#endInput").val(endInput);
+						break
+						case '7':  
+							var endInput = startInput*640;
+							$("#endInput").val(endInput);
+						break
+					}
+				break
+			}
+			switch(startSelect){
+				case '4':  
+					switch(endSelect){
+						case '0':  
+							var endInput = startInput*929.03;
+							$("#endInput").val(endInput);
+						break
+						case '1':  
+							var endInput = startInput*0.093;
+							$("#endInput").val(endInput);
+						break
+						case '2':  
+							var endInput = startInput*9.29e-8;
+							$("#endInput").val(endInput);
+						break
+						case '3':  
+							var endInput = startInput*3.59e-8;
+							$("#endInput").val(endInput);
+						break
+						case '4':  
+							var endInput = startInput;
+							$("#endInput").val(endInput);
+						break
+						case '5':  
+							var endInput = startInput*144;
+							$("#endInput").val(endInput);
+						break
+						case '6':  
+							var endInput = startInput*0.0000093;
+							$("#endInput").val(endInput);
+						break
+						case '7':  
+							var endInput = startInput*0.000023;
+							$("#endInput").val(endInput);
+						break
+					}
+				break
+			}
+			switch(startSelect){
+				case '5':  
+					switch(endSelect){
+						case '0':  
+							var endInput = startInput*6.45;
+							$("#endInput").val(endInput);
+						break
+						case '1':  
+							var endInput = startInput*0.00065;
+							$("#endInput").val(endInput);
+						break
+						case '2':  
+							var endInput = startInput*6.45e-10;
+							$("#endInput").val(endInput);
+						break
+						case '3':  
+							var endInput = startInput*2.49e-10;
+							$("#endInput").val(endInput);
+						break
+						case '4':  
+							var endInput = startInput*0.0069;
+							$("#endInput").val(endInput);
+						break
+						case '5':  
+							var endInput = startInput;
+							$("#endInput").val(endInput);
+						break
+						case '6':  
+							var endInput = startInput*6.45e-8;
+							$("#endInput").val(endInput);
+						break
+						case '7':  
+							var endInput = startInput*1.59e-7;
+							$("#endInput").val(endInput);
+						break
+					}
+				break
+			}
+			switch(startSelect){
+				case '6':  
+					switch(endSelect){
+						case '0':  
+							var endInput = startInput*100000000;
+							$("#endInput").val(endInput);
+						break
+						case '1':  
+							var endInput = startInput*10000;
+							$("#endInput").val(endInput);
+						break
+						case '2':  
+							var endInput = startInput*0.01;
+							$("#endInput").val(endInput);
+						break
+						case '3':  
+							var endInput = startInput*0.0039;
+							$("#endInput").val(endInput);
+						break
+						case '4':  
+							var endInput = startInput*107639.1;
+							$("#endInput").val(endInput);
+						break
+						case '5':  
+							var endInput = startInput*15500031;
+							$("#endInput").val(endInput);
+						break
+						case '6':  
+							var endInput = startInput;
+							$("#endInput").val(endInput);
+						break
+						case '7':  
+							var endInput = startInput*2.47;
+							$("#endInput").val(endInput);
+						break
+					}
+				break
+			}
+			switch(startSelect){
+				case '7':  
+					switch(endSelect){
+						case '0':  
+							var endInput = startInput*40468600;
+							$("#endInput").val(endInput);
+						break
+						case '1':  
+							var endInput = startInput*4046.86;
+							$("#endInput").val(endInput);
+						break
+						case '2':  
+							var endInput = startInput*0.004;
+							$("#endInput").val(endInput);
+						break
+						case '3':  
+							var endInput = startInput*0.0016;
+							$("#endInput").val(endInput);
+						break
+						case '4':  
+							var endInput = startInput*43560.04;
+							$("#endInput").val(endInput);
+						break
+						case '5':  
+							var endInput = startInput*6272645.55;
+							$("#endInput").val(endInput);
+						break
+						case '6':  
+							var endInput = startInput*0.4;
+							$("#endInput").val(endInput);
+						break
+						case '7':  
+							var endInput = startInput;
+							$("#endInput").val(endInput);
+						break
+					}
+				break	
+			}
+		}				
+	</script>
+	
+  </body>
+</html>

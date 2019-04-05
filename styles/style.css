@@ -1,0 +1,21 @@
+@media screen and (max-width: 500px){
+	.desktop{	
+		display: none;
+	}
+	.mobile{
+		display: block;
+		$('.dropdown-toggle').dropdown()
+	}
+}
+@media screen and (min-width: 499px){
+	.desktop{	
+		display: block;
+	}
+	.mobile{
+		display: none;
+		$('.dropdown-toggle').dropdown()
+	}
+}
+.customButton{
+	margin:0 0 5px 0;
+}

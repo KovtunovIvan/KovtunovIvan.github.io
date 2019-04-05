@@ -1,0 +1,133 @@
+<!doctype html><!-- Элемент <!DOCTYPE> предназначен для указания типа текущего документа-строгий HTML или переходный или XHTML и тд. -->
+<html><!-- Открывающий и закрывающий теги <html> в документе необязательны, но хороший стиль диктует непременное их использование. -->
+  <head>Тег <head> <!-- предназначен для хранения других элементов, цель которых — помочь браузеру в работе с данными. Также внутри контейнера <head> находятся метатеги,
+  которые используются для хранения информации предназначенной для браузеров и поисковых систем.  -->
+    <meta charset="utf-8"><meta> <!-- meta определяет метатеги,механизмы поисковых систем обращаются к метатегам для получения описания сайта, ключевых слов и других данных.
+	charset задает кодировку документа.utf-8 это формат кодировки -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- http-equiv
+Предназначен для конвертирования метатега в заголовок HTTP.
+content
+Устанавливает значение атрибута, заданного с помощью name или http-equiv.
+Метатег X-UA-Compatible позволяет веб-авторам выбирать, какую версию Internet Explorer должен отображать страница.
+Режим Edge указывает Internet Explorer отображать содержимое в самом высоком режиме. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- meta viewport предназначен для того, чтобы веб-страницы отображались (выглядели) правильно (корректно)
+	на смартфонах, планшетах и других устройствах с высокой плотностью пикселей (>200ppi).Атрибут name предназначен для того чтобы указать браузеру, какую именно информацию о странице хотим ему сообщить.
+	В данном случае эта информация касается viewport.Свойство width определяет размер окна просмотра.
+	Он может быть установлен на определенное количество пикселей, скажем,width=600 или на специальное значение device-width, которое означает ширину экрана в пикселях
+	Свойство initial-scale контролирует уровень масштабирования при первой загрузке страницы. -->
+    <title>Конвертёр</title><!-- объявляем заголовок -->
+
+    <link rel="stylesheet" href="bootstrap-3.4.0-dist/css/bootstrap.min.css"><!-- link Устанавливает связь с внешним документом вроде файла со стилями или со шрифтами.rel
+Определяет отношения между текущим документом и файлом, на который делается ссылка.Объект, реализующий интерфейс StyleSheet, представляет отдельную таблицу стилей. 
+href Задает адрес документа, на который следует перейти.bootstrap-3.4.0-dist/css/bootstrap.min.css сам адрес папки из которой берутся стили и заготовки -->
+	<link rel="stylesheet" href="styles/style.css"><!-- styles/style.css еще один адрес папки со стилями -->
+
+  </head><!-- конец тега head -->
+  <body><!-- Элемент <body> предназначен для хранения содержания веб-страницы (контента), отображаемого в окне браузера. -->
+	<nav class="navbar navbar-inverse navbar-fixed-top"><!-- Тег <nav> задает навигацию по сайту.class Задает стилевой класс, который позволяет связать определенный тег со стилевым оформлением.
+	navbar navbar-inverse navbar-fixed-top указываем тип навигационной панели. navbar-inverse отвечает за белый текст на черном фоне(без этого было бы наоборот).
+	navbar-fixed-top отвечает за то чтобы заголовок всегда оставался вверху экрана,а не уехжал за границы с текстом. -->
+	  <div class="container"><!-- Элемент <div> является блочным элементом и предназначен для выделения фрагмента документа с целью изменения вида содержимого.
+	   <div class="container"> это шаблон -отцентрованное расположение элементов -->
+		<div class="navbar-header"><!-- тэг <div> с классом "navbar-header", видим для любых размеров экрана. -->
+		  <a class="navbar-brand" href="#"> Конвертёр</a><!--Тег <a> предназначен для создания ссылок.Navbar-brand часть заголовка в которой вписывается бренд.
+		  href="#" делает так что гиперссылка(имя бренда) переносит нас в начало главной страницы -->
+		</div><!-- конец внутреннего тега div -->
+	  </div><!-- конец внешнего тега div -->
+	</nav><!-- конец тега nav -->
+	
+	<div class="jumbotron desktop"><!-- jumbotron указывает тип области просмотра.jumbotron desktop область просмотра-экраны пк,ноутбуков. -->
+		<div class="container">
+			<br><!-- тег добавляет новый абзац,в отличие от тега абзаца <p>, использование тега <br> не добавляет пустой отступ перед строкой. -->
+			<br>
+			<h1>Добро пожаловать!</h1><!-- задаем главный заголовок -->
+			<br>
+			<p>Конвертер перевода единиц измерения физических величин поможет вам в пересчёте единиц измерения физических величин из одной системы в другую. С его помощью легко узнать, например, какого размера были и сколько весили американские и английские самолёты времён второй мировой войны, пересчитав их размеры в футах и дюймах в метры, а вес в фунтах - в килограммы.</p>
+			<!-- записываем текст в выбранной области используя шаблон container -->
+		</div>
+	</div>
+	
+	<div class="jumbotron mobile"><!-- jumbotron mobile область просмотра-смартфоны -->
+		<div class="container">
+			<br>
+			<br>
+			<h1>Добро пожаловать!</h1>
+			<br>
+			<p>Конвертер перевода единиц измерения физических величин поможет вам в пересчёте единиц измерения физических величин из одной системы в другую.<p>
+			<!-- задаем текст для телефонов по шаблону в выбранной области -->
+		</div>
+	</div>
+	
+	<div class="container"><!--  опять выделяем область и выбираем шаблон container(описан выше) -->
+		<div class="desktop"><!--  выделяем область для пк и ноутбуков -->
+			<a href="length.html" class="btn btn-primary btn-lg customButton"><span class="glyphicon glyphicon-resize-horizontal" style="font-size:25px" aria-hidden="true"></span><br>Перевести<br>длину</a>
+			<a href="volume.html" class="btn btn-primary btn-lg customButton"><span class="glyphicon glyphicon-tint" style="font-size:25px" aria-hidden="true"></span><br>Перевести<br>объём</a>
+			<a href="square.html" class="btn btn-primary btn-lg customButton"><span class="glyphicon glyphicon-th" style="font-size:25px" aria-hidden="true"></span><br>Перевести<br>площадь</a>
+			<a href="amount of information.html" class="btn btn-primary btn-lg customButton"><span class="glyphicon glyphicon-floppy-disk" style="font-size:25px" aria-hidden="true"></span><br>Перевести<br>объём информации</a>
+			<a href="temperature.html" class="btn btn-primary btn-lg customButton"><span class="glyphicon glyphicon-fire" style="font-size:25px" aria-hidden="true"></span><br>Перевести<br>температуру</a>
+			<a href="time.html" class="btn btn-primary btn-lg customButton"><span class="glyphicon glyphicon-time" style="font-size:25px" aria-hidden="true"></span><br>Перевести<br>время</a>
+			<a href="weight.html" class="btn btn-primary btn-lg customButton"><span class="glyphicon glyphicon-scale" style="font-size:25px" aria-hidden="true"></span><br>Перевести<br>массу</a>
+			<a href="speed.html" class="btn btn-primary btn-lg customButton"><span class="glyphicon glyphicon-road" style="font-size:25px" aria-hidden="true"></span><br>Перевести<br>скорость</a>
+			<!-- Тег <span> предназначен для определения строчных элементов документа. с помощью тега <span> можно выделить часть информации внутри других тегов и установить для нее свой стиль.
+			font-size:25px определяет размер изображения.
+			для каждого вида конвертирования создаем гиперссылку-кнопку(class="btn btn-primary btn-lg customButton" отвечает за это) с заготовленным изображением,
+			которое хранится в папке(class="glyphicon...."отвечает за это) и надпись.aria-hidden="true помогает экранному диктору ориентироваться на странице -->
+		</div>
+		<div class="mobile"><!-- а теперь для мобильных устройств -->
+			<div class="dropdown"><!-- dropdown отвечает за выпадающее меню -->
+			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			Величины
+			<span class="caret"></span><!--  шаблон выпадающего меню при котором оно выдвигается вниз(есть шаблон с выдвижением вверх)-->
+			</button>
+			<ul class="dropdown-menu" aria-labelledby="dropdownMenu1"><!--  Тег <ul> устанавливает маркированный список.Каждый элемент списка должен начинаться с тега <li>.
+			dropdown-menu тип списка(выдвигающееся меню)Атрибут создаёт связь между обьектами и их метками. Вспомогательные технологии, такие как средства чтения экрана,
+			используют этот атрибут чтобы собирать все метки в каталог документа, из которого пользователь может перемещаться между ними. -->
+			<li><a href="length.html">Длина</a></li>
+			<li><a href="volume.html">Объём</a></li>
+			<li><a href="square.html">Площадь</a></li>
+			<li><a href="amount of information.html">Объём информаци</a></li>
+			<li><a href="temperature.html">Температура</a></li>
+			<li><a href="time.html">Время</a></li>
+			<li><a href="weight.html">Масса</a></li>
+			<li><a href="speed.html">Скорость</a></li>
+			<li role="separator" class="divider"></li>
+			<!-- мы создали гиперссылки-пункты в выдвигающемся меню для телефонов -->
+			</ul>
+			</div>
+		</div>
+		<hr class="featurette-divider" style="margin: 50px 0 50px 0"> <!-- hr Рисует горизонтальную линию,featurette-divider шаблон линии.margin: 50px 0 50px 0 задает величину отступа -->
+		<div class="row featurette"><!-- стиль, который создан в бутстраппе, показываю на сладйде красоту из картинок и текста -->
+			<div class="col-md-7"><!-- стиль, который задаёт ширину тег -->
+			  <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
+			  <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+			</div>
+			<div class="col-md-5">
+			  <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="images/02.jpg" data-holder-rendered="true">
+			</div>
+		 </div>
+		 <hr class="featurette-divider">
+		<div class="row featurette">
+			<div class="col-md-7 col-md-push-5">
+				<h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
+				<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+			</div>
+			<div class="col-md-5 col-md-pull-7">
+				<img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDUwMCA1MDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzUwMHg1MDAvYXV0bwpDcmVhdGVkIHdpdGggSG9sZGVyLmpzIDIuNi4wLgpMZWFybiBtb3JlIGF0IGh0dHA6Ly9ob2xkZXJqcy5jb20KKGMpIDIwMTItMjAxNSBJdmFuIE1hbG9waW5za3kgLSBodHRwOi8vaW1za3kuY28KLS0+PGRlZnM+PHN0eWxlIHR5cGU9InRleHQvY3NzIj48IVtDREFUQVsjaG9sZGVyXzE2OTQ0OWE3ZTJkIHRleHQgeyBmaWxsOiNBQUFBQUE7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LWZhbWlseTpBcmlhbCwgSGVsdmV0aWNhLCBPcGVuIFNhbnMsIHNhbnMtc2VyaWYsIG1vbm9zcGFjZTtmb250LXNpemU6MjVwdCB9IF1dPjwvc3R5bGU+PC9kZWZzPjxnIGlkPSJob2xkZXJfMTY5NDQ5YTdlMmQiPjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjRUVFRUVFIi8+PGc+PHRleHQgeD0iMTg1LjEyNSIgeT0iMjYxLjEiPjUwMHg1MDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" data-holder-rendered="true">
+			</div>
+		</div>
+		<hr>
+		<footer>
+			<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">© 2019 Информационно-технологический класс, МОУ СОШ №3</font></font></p>
+		</footer>
+		<br>
+	</div>
+	
+    <script src="scripts/jquery.js"</script>
+    <script src="bootstrap-3.4.0-dist/js/bootstrap.min.js" ></script>
+	<script> 
+		$('#dropdownMenu1').click(function(){ 
+			$('.dropdown-menu').toggleClass("show"); 
+		}); 
+	</script>
+  </body><!-- конец тега body -->
+</html><!-- конец тега html -->
