@@ -1,0 +1,372 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Время</title>
+
+    <link rel="stylesheet" href="bootstrap-3.4.0-dist/css/bootstrap.min.css">
+
+  </head>
+  <body>
+	<nav class="navbar navbar-default">
+	  <div class="container">
+		<div class="navbar-header">
+		  <a class="navbar-brand" href="index.html">Конвертёр</a>
+		</div>
+	  </div>
+	</nav>
+	<div class="container"> 
+		<ol class="breadcrumb">
+		  <li><a href="index.html">Главная</a></li>
+		  <li class="active">Время</li>
+		</ol>
+		<div style="width:45%;float:left;">
+			<input type="number" class="form-control" value="" ID="startInput">
+			<select class="form-control" ID="startSelect">
+				<option value="0">Секунды</option>
+				<option value="1">Минуты</option>
+				<option value="2">Часы</option>
+				<option value="3">Сутки</option>
+				<option value="4">Недели</option>
+				<option value="5">Тысяча лет</option>
+				<option value="6">Года</option>
+				<option value="7">Века</option>
+			</select>
+		</div>
+		<div style="width:10%;float:left; text-align:center">
+			<button type="button" class="btn btn-primary" id="buttonLength">=</button>
+		</div>
+		<div style="width:45%;float:left;">
+			<input type="number" class="form-control" disabled value="" ID="endInput">
+			<select class="form-control" ID="endSelect">
+				<option value="0">Секунды</option>
+				<option value="1">Минуты</option>
+				<option value="2">Часы</option>
+				<option value="3">Сутки</option>
+				<option value="4">Недели</option>
+				<option value="5">Тысяча лет</option>
+				<option value="6">Года</option>
+				<option value="7">Века</option>
+			</select>
+		</div>
+	</div>
+	
+    <script src="scripts/jquery.js" ></script>
+    <script src="bootstrap-3.4.0-dist/js/bootstrap.min.js" ></script>
+	<script>
+		$("#buttonLength").click(function(){count()});
+		function count(){
+			var startInput = $("#startInput").val();
+			var startSelect = $("#startSelect").val();
+			var endSelect = $("#endSelect").val();
+			
+			switch(startSelect){
+				case '0':  
+					switch(endSelect){
+						case '0':  
+							var endInput = startInput;
+							$("#endInput").val(endInput);
+						break
+						case '1':  
+							var endInput = startInput*0.0166667;
+							$("#endInput").val(endInput);
+						break
+						case '2':  
+							var endInput = startInput*0.00028;
+							$("#endInput").val(endInput);
+						break
+						case '3':  
+							var endInput = startInput*0.000012;
+							$("#endInput").val(endInput);
+						break
+						case '4':  
+							var endInput = startInput*0.0000017;
+							$("#endInput").val(endInput);
+						break
+						case '5':  
+							var endInput = startInput*3.17e-11;
+							$("#endInput").val(endInput);
+						break
+						case '6':  
+							var endInput = startInput*3.17e-8;
+							$("#endInput").val(endInput);
+						break
+						case '7':  
+							var endInput = startInput*3.17e-10;
+							$("#endInput").val(endInput);
+						break
+					}
+				break
+			}
+			switch(startSelect){
+				case '1':  
+					switch(endSelect){
+						case '0':  
+							var endInput = startInput*60;
+							$("#endInput").val(endInput);
+						break
+						case '1':  
+							var endInput = startInput;
+							$("#endInput").val(endInput);
+						break
+						case '2':  
+							var endInput = startInput*0.017;
+							$("#endInput").val(endInput);
+						break
+						case '3':  
+							var endInput = startInput*0.00069;
+							$("#endInput").val(endInput);
+						break
+						case '4':  
+							var endInput = startInput*0.000099;
+							$("#endInput").val(endInput);
+						break
+						case '5':  
+							var endInput = startInput*1.9e-9;
+							$("#endInput").val(endInput);
+						break
+						case '6':  
+							var endInput = startInput*0.0000019;
+							$("#endInput").val(endInput);
+						break
+						case '7':  
+							var endInput = startInput*1.9e-8;
+							$("#endInput").val(endInput);
+						break
+					}
+				break
+			}
+			switch(startSelect){
+				case '2':  
+					switch(endSelect){
+						case '0':  
+							var endInput = startInput*3600;
+							$("#endInput").val(endInput);
+						break
+						case '1':  
+							var endInput = startInput*60;
+							$("#endInput").val(endInput);
+						break
+						case '2':  
+							var endInput = startInput;
+							$("#endInput").val(endInput);
+						break
+						case '3':  
+							var endInput = startInput*0.042;
+							$("#endInput").val(endInput);
+						break
+						case '4':  
+							var endInput = startInput*0.006;
+							$("#endInput").val(endInput);
+						break
+						case '5':  
+							var endInput = startInput*1.14e-7;
+							$("#endInput").val(endInput);
+						break
+						case '6':  
+							var endInput = startInput*0.00011;
+							$("#endInput").val(endInput);
+						break
+						case '7':  
+							var endInput = startInput*0.0000011;
+							$("#endInput").val(endInput);
+						break
+					}
+				break
+			}
+			switch(startSelect){
+				case '3':  
+					switch(endSelect){
+						case '0':  
+							var endInput = startInput*86400;
+							$("#endInput").val(endInput);
+						break
+						case '1':  
+							var endInput = startInput*1440;
+							$("#endInput").val(endInput);
+						break
+						case '2':  
+							var endInput = startInput*24;
+							$("#endInput").val(endInput);
+						break
+						case '3':  
+							var endInput = startInput;
+							$("#endInput").val(endInput);
+						break
+						case '4':  
+							var endInput = startInput*0.14;
+							$("#endInput").val(endInput);
+						break
+						case '5':  
+							var endInput = startInput*0.0000027;
+							$("#endInput").val(endInput);
+						break
+						case '6':  
+							var endInput = startInput*0.0027;
+							$("#endInput").val(endInput);
+						break
+						case '7':  
+							var endInput = startInput*0.000027;
+							$("#endInput").val(endInput);
+						break
+					}
+				break
+			}
+			switch(startSelect){
+				case '4':  
+					switch(endSelect){
+						case '0':  
+							var endInput = startInput*604800;
+							$("#endInput").val(endInput);
+						break
+						case '1':  
+							var endInput = startInput*10080;
+							$("#endInput").val(endInput);
+						break
+						case '2':  
+							var endInput = startInput*168;
+							$("#endInput").val(endInput);
+						break
+						case '3':  
+							var endInput = startInput*7;
+							$("#endInput").val(endInput);
+						break
+						case '4':  
+							var endInput = startInput;
+							$("#endInput").val(endInput);
+						break
+						case '5':  
+							var endInput = startInput*0.000019;
+							$("#endInput").val(endInput);
+						break
+						case '6':  
+							var endInput = startInput*0.019;
+							$("#endInput").val(endInput);
+						break
+						case '7':  
+							var endInput = startInput*0.00019;
+							$("#endInput").val(endInput);
+						break
+					}
+				break
+			}
+			switch(startSelect){
+				case '5':  
+					switch(endSelect){
+						case '0':  
+							var endInput = startInput*31536000000;
+							$("#endInput").val(endInput);
+						break
+						case '1':  
+							var endInput = startInput*525600000;
+							$("#endInput").val(endInput);
+						break
+						case '2':  
+							var endInput = startInput*8760000;
+							$("#endInput").val(endInput);
+						break
+						case '3':  
+							var endInput = startInput*365000;
+							$("#endInput").val(endInput);
+						break
+						case '4':  
+							var endInput = startInput*52142.86;
+							$("#endInput").val(endInput);
+						break
+						case '5':  
+							var endInput = startInput;
+							$("#endInput").val(endInput);
+						break
+						case '6':  
+							var endInput = startInput*1000;
+							$("#endInput").val(endInput);
+						break
+						case '7':  
+							var endInput = startInput*10;
+							$("#endInput").val(endInput);
+						break
+					}
+				break
+			}
+			switch(startSelect){
+				case '6':  
+					switch(endSelect){
+						case '0':  
+							var endInput = startInput*31536000;
+							$("#endInput").val(endInput);
+						break
+						case '1':  
+							var endInput = startInput*525600;
+							$("#endInput").val(endInput);
+						break
+						case '2':  
+							var endInput = startInput*8760;
+							$("#endInput").val(endInput);
+						break
+						case '3':  
+							var endInput = startInput*365;
+							$("#endInput").val(endInput);
+						break
+						case '4':  
+							var endInput = startInput*52.14;
+							$("#endInput").val(endInput);
+						break
+						case '5':  
+							var endInput = startInput*0.001;
+							$("#endInput").val(endInput);
+						break
+						case '6':  
+							var endInput = startInput;
+							$("#endInput").val(endInput);
+						break
+						case '7':  
+							var endInput = startInput*0.01;
+							$("#endInput").val(endInput);
+						break
+					}
+				break
+			}
+			switch(startSelect){
+				case '7':  
+					switch(endSelect){
+						case '0':  
+							var endInput = startInput*3153600000;
+							$("#endInput").val(endInput);
+						break
+						case '1':  
+							var endInput = startInput*52560000;
+							$("#endInput").val(endInput);
+						break
+						case '2':  
+							var endInput = startInput*876000;
+							$("#endInput").val(endInput);
+						break
+						case '3':  
+							var endInput = startInput*36500;
+							$("#endInput").val(endInput);
+						break
+						case '4':  
+							var endInput = startInput*5214.29;
+							$("#endInput").val(endInput);
+						break
+						case '5':  
+							var endInput = startInput*0.1;
+							$("#endInput").val(endInput);
+						break
+						case '6':  
+							var endInput = startInput*100;
+							$("#endInput").val(endInput);
+						break
+						case '7':  
+							var endInput = startInput;
+							$("#endInput").val(endInput);
+						break
+					}
+				break
+			}
+		}	
+	</script>
+	
+  </body>
+</html>

@@ -1,0 +1,381 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Длина</title>
+
+    <link rel="stylesheet" href="bootstrap-3.4.0-dist/css/bootstrap.min.css">
+
+  </head>
+  <body>
+	<nav class="navbar navbar-default">
+	  <div class="container">
+		<div class="navbar-header">
+		  <a class="navbar-brand" href="index.html">Конвертёр</a>
+		</div>
+	  </div>
+	</nav><!-- все представленное выше уже было прокоментированно в index.html -->
+	<div class="container"> 
+		<ol class="breadcrumb"><!-- хлебные крошки <li> обозначает элемент списка.breadcrumb / -->
+		  <li><a href="index.html">Главная</a></li>
+		  <li class="active">Длина</li>
+		</ol>
+		<div style="width:45%;float:left;"><!-- задает ширину списка(выделенной для него рамки) -->
+			<input type="number" class="form-control" value="" ID="startInput"><!-- input type="number" обозначает тип входящего элемента(числа в одной величине).class="form-control" задает шаблон 
+			списка с величинами.ID="startInput" входящим элементам(числам) дается имя(в программе) startInput.Атрибут value отвечает за начальное значение,
+			и так как в программе пустое место так же и на сайте(дабы сразу было видно куда вбивать) -->
+			<select class="form-control" ID="startSelect"><!-- Тег <select> позволяет создать элемент интерфейса в виде раскрывающегося списка,элементам в программе дается имя startSelect -->
+			<!-- в списке ниже будут выличины, ИЗ которых мы будем переводить -->
+				<option value="0">Миллиметры</option><!-- Тег <option> определяет отдельные пункты списка,value= отвечает за порядковый номер а далее идет имя переменной -->
+				<option value="1">Cантиметры</option>
+				<option value="2">Метры</option>
+				<option value="3">Километры</option>
+				<option value="4">Миля</option>
+				<option value="5">Ярд</option>
+				<option value="6">Фут</option>
+				<option value="7">Дюйм</option>
+			</select>
+		</div>
+		<div style="width:10%;float:left; text-align:center"><!-- text-align:center" выравнивает текст по центру горизонтально.style="width:10%;float:leftзадает ширину кнопки -->
+			<button type="button" class="btn btn-primary" id="buttonLength">=</button><!-- создаем кнопку с одноименным типом и присваеваем ей имя в программе-buttonLength
+			class="btn btn-primary" задает синий цвет,внутри кнопки будет символ = -->
+		</div>
+		<div style="width:45%;float:left;"><!-- задает ширину списка(выделенной для него рамки -->
+			<input type="number" class="form-control" disabled value="" ID="endInput"><!-- операция как в списке сверху,
+			но атрибут disabled делает поле заблокированным(чтобы в нем был только вывод).А имя переменной для вывода будет endInput -->
+			<!-- <select class="form-control" ID="endSelect">элементы списка теперь тоже имеют другое имя -->
+			<select class="form-control" ID="endSelect">
+				<option value="0">Миллиметры</option>
+				<option value="1">Cантиметры</option>
+				<option value="2">Метры</option>
+				<option value="3">Километры</option>
+				<option value="4">Миля</option>
+				<option value="5">Ярд</option>
+				<option value="6">Фут</option>
+				<option value="7">Дюйм</option>
+			</select>
+		</div>
+		<p id="formula"> </p><!-- тут создана отдельная строка для формул(пока нет) -->
+	</div>
+	
+    <script src="scripts/jquery.js" ></script><!-- Тег <script>предназначен для описания скриптов, может содержать ссылку на программу или ее текст на определенном языке.мы подключаем библеотеку из папки которая позволяет использовать javascript в html,сам скриптj -->
+    <script src="bootstrap-3.4.0-dist/js/bootstrap.min.js" ></script><!-- подключаем скрипт на javascripte из папки -->
+	<script><!-- начало скрипта из javascript отвечающего за перевод -->
+		$("#buttonLength").click(function(){count()});<!-- после нажатия кнопки скрипт активируется -->
+		function count(){
+			var startInput = $("#startInput").val();<!-- здесь мы вводим значение величины -->
+			var startSelect = $("#startSelect").val();<!--выбираем саму величину -->
+			var endSelect = $("#endSelect").val();<!--и в какую будем переводить -->
+			
+			switch(startSelect){<!-- аналог команды case из paskal.Для каждого варианта(величины) есть перевод во все другие варианты(величины) -->
+				case '0':  <!-- номер варианта(величины) -->
+					switch(endSelect){<!-- внутренний switch отвечающий за выбор выличины в которую будем переводить -->
+						case '0':  <!--   номер варианты(величины) в который будем переводить -->
+							var endInput = startInput;<!-- здесь задается формула по которой находится конечное(переведенное) значение.в нашем случае конечное равно начальному так как величина одна и таже -->
+							$("#endInput").val(endInput);<!-- выводим  полученное значение -->
+						break <!-- выходим из ВСЕХ switch -->
+						case '1':  
+							var endInput = startInput*0.1;
+							$("#endInput").val(endInput);
+							$("#formula").text("миллиметры*0.1");
+						break
+						case '2':  
+							var endInput = startInput*0.001;
+							$("#endInput").val(endInput);
+						break
+						case '3':  
+							var endInput = startInput*0.000001;
+							$("#endInput").val(endInput);
+						break
+						case '4':  
+							var endInput = startInput*6.214*1/10000000;
+							$("#endInput").val(endInput);
+						break
+						case '5':  
+							var endInput = startInput*0.00109361;
+							$("#endInput").val(endInput);
+						break
+						case '6':  
+							var endInput = startInput*0.00328084;
+							$("#endInput").val(endInput);
+						break
+						case '7':  
+							var endInput = startInput/25.4;
+							$("#endInput").val(endInput);
+						break
+					}
+				break
+			}
+			switch(startSelect){
+				case '1':  
+					switch(endSelect){
+						case '0':  
+							var endInput = startInput*10;
+							$("#endInput").val(endInput);
+						break
+						case '1':  
+							var endInput = startInput;
+							$("#endInput").val(endInput);
+						break
+						case '2':  
+							var endInput = startInput*0.01;
+							$("#endInput").val(endInput);
+						break
+						case '3':  
+							var endInput = startInput*0.00001;
+							$("#endInput").val(endInput);
+						break
+						case '4':  
+							var endInput = startInput*6.214*1/10000000;
+							$("#endInput").val(endInput);
+						break
+						case '5':  
+							var endInput = startInput*0.0109361;
+							$("#endInput").val(endInput);
+						break
+						case '6':  
+							var endInput = startInput*0.0328084;
+							$("#endInput").val(endInput);
+						break
+						case '7':  
+							var endInput = startInput*0.393701;
+							$("#endInput").val(endInput);
+						break
+					}
+				break
+			}
+			switch(startSelect){
+				case '2':  
+					switch(endSelect){
+						case '0':  
+							var endInput = startInput*1000;
+							$("#endInput").val(endInput);
+						break
+						case '1':  
+							var endInput = startInput*100;
+							$("#endInput").val(endInput);
+						break
+						case '2':  
+							var endInput = startInput;
+							$("#endInput").val(endInput);
+						break
+						case '3':  
+							var endInput = startInput*0.001;
+							$("#endInput").val(endInput);
+						break
+						case '4':  
+							var endInput = startInput*0.000621371;
+							$("#endInput").val(endInput);
+						break
+						case '5':  
+							var endInput = startInput*1.09361;
+							$("#endInput").val(endInput);
+						break
+						case '6':  
+							var endInput = startInput*3.28084;
+							$("#endInput").val(endInput);
+						break
+						case '7':  
+							var endInput = startInput*39.3701;
+							$("#endInput").val(endInput);
+						break
+					}
+				break
+			}
+			switch(startSelect){
+				case '3':  
+					switch(endSelect){
+						case '0':  
+							var endInput = startInput*0.000001;
+							$("#endInput").val(endInput);
+						break
+						case '1':  
+							var endInput = startInput*10000;
+							$("#endInput").val(endInput);
+						break
+						case '2':  
+							var endInput = startInput*1000;
+							$("#endInput").val(endInput);
+						break
+						case '3':  
+							var endInput = startInput;
+							$("#endInput").val(endInput);
+						break
+						case '4':  
+							var endInput = startInput*0.621371;
+							$("#endInput").val(endInput);
+						break
+						case '5':  
+							var endInput = startInput*1093.61;
+							$("#endInput").val(endInput);
+						break
+						case '6':  
+							var endInput = startInput*3280.84;
+							$("#endInput").val(endInput);
+						break
+						case '7':  
+							var endInput = startInput*39370.1;
+							$("#endInput").val(endInput);
+						break
+					}
+				break
+			}
+			switch(startSelect){
+				case '4':  
+					switch(endSelect){
+						case '0':  
+							var endInput = startInput*1.609*1000000;
+							$("#endInput").val(endInput);
+						break
+						case '1':  
+							var endInput = startInput*160934;
+							$("#endInput").val(endInput);
+						break
+						case '2':  
+							var endInput = startInput*1609.34;
+							$("#endInput").val(endInput);
+						break
+						case '3':  
+							var endInput = startInput*1.60934;
+							$("#endInput").val(endInput);
+						break
+						case '4':  
+							var endInput = startInput;
+							$("#endInput").val(endInput);
+						break
+						case '5':  
+							var endInput = startInput*1760;
+							$("#endInput").val(endInput);
+						break
+						case '6':  
+							var endInput = startInput*5280;
+							$("#endInput").val(endInput);
+						break
+						case '7':  
+							var endInput = startInput*63360;
+							$("#endInput").val(endInput);
+						break
+					}
+				break
+			}
+			switch(startSelect){
+				case '5':  
+					switch(endSelect){
+						case '0':  
+							var endInput = startInput*914.4;
+							$("#endInput").val(endInput);
+						break
+						case '1':  
+							var endInput = startInput*91.44;
+							$("#endInput").val(endInput);
+						break
+						case '2':  
+							var endInput = startInput*0.9144;
+							$("#endInput").val(endInput);
+						break
+						case '3':  
+							var endInput = startInput*0.0009144;
+							$("#endInput").val(endInput);
+						break
+						case '4':  
+							var endInput = startInput*0.000568182;
+							$("#endInput").val(endInput);
+						break
+						case '5':  
+							var endInput = startInput;
+							$("#endInput").val(endInput);
+						break
+						case '6':  
+							var endInput = startInput*3.00000096;
+							$("#endInput").val(endInput);
+						break
+						case '7':  
+							var endInput = startInput*36.00001152;
+							$("#endInput").val(endInput);
+						break
+					}
+				break
+			}
+			switch(startSelect){
+				case '6':  
+					switch(endSelect){
+						case '0':  
+							var endInput = startInput*304.8;
+							$("#endInput").val(endInput);
+						break
+						case '1':  
+							var endInput = startInput*30.48;
+							$("#endInput").val(endInput);
+						break
+						case '2':  
+							var endInput = startInput*0.3048;
+							$("#endInput").val(endInput);
+						break
+						case '3':  
+							var endInput = startInput*0.0003048;
+							$("#endInput").val(endInput);
+						break
+						case '4':  
+							var endInput = startInput*0.000189394;
+							$("#endInput").val(endInput);
+						break
+						case '5':  
+							var endInput = startInput*0.33333344;
+							$("#endInput").val(endInput);
+						break
+						case '6':  
+							var endInput = startInput;
+							$("#endInput").val(endInput);
+						break
+						case '7':  
+							var endInput = startInput*12.00000384;
+							$("#endInput").val(endInput);
+						break
+					}
+				break
+			}
+			switch(startSelect){
+				case '7':  
+					switch(endSelect){
+						case '0':  
+							var endInput = startInput*25.4;
+							$("#endInput").val(endInput);
+						break
+						case '1':  
+							var endInput = startInput*2.54;
+							$("#endInput").val(endInput);
+						break
+						case '2':  
+							var endInput = startInput*0.0254;
+							$("#endInput").val(endInput);
+						break
+						case '3':  
+							var endInput = startInput/39370.079;
+							$("#endInput").val(endInput);
+						break
+						case '4':  
+							var endInput = startInput/63360;
+							$("#endInput").val(endInput);
+						break
+						case '5':  
+							var endInput = startInput/36;
+							$("#endInput").val(endInput);
+						break
+						case '6':  
+							var endInput = startInput/12;
+							$("#endInput").val(endInput);
+						break
+						case '7':  
+							var endInput = startInput;
+							$("#endInput").val(endInput);
+						break
+					}
+				break
+			}
+		}	
+	</script>
+	
+  </body>
+</html>
