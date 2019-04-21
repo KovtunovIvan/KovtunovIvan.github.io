@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CONVERTER</title>
+	<link rel="stylesheet" href="style/styleIndex.css">
+	<link rel="stylesheet" href="style/styleAnimation.css">
+	<link rel="shortcut icon" href="img/favicon.png" type="image/png">
+  </head>
+  <body>
+    <div class="headerWrap">
+		<div class="clearfix header">
+			<a class="logo" href="index.html"><img src="img/01.png" class="img1">CONVERTER</a>
+			<hr>
+			<p class="siteDescription">Конвертёр перевода единиц измерения физических величин поможет Вам в пересчёте единиц измерения физических величин из одной системы в другую. С его помощью легко узнать, например, какого размера были и сколько весили американские и английские самолёты времён Второй мировой войны, пересчитав их размеры в футах и дюймах в метры, а вес в фунтах – в килограммы.</p>
+		</div>
+	</div>
+	<div class="clearfix mainPart">
+		<div class="buttonBlock">
+			<a href="length.html"><img src="img/02.png" class="img2"></a>
+			<a href="length.html"><h3 class="buttonText">ПЕРЕВОД ДЛИНЫ<h3></a>
+			<p></p>
+		</div>
+		<div class="buttonBlock">
+			<a href="volume.html"><img src="img/03.png" class="img2"></a>
+			<a href="volume.html"><h3 class="buttonText">ПЕРЕВОД ОБЪЁМА<h3></a>
+			<p></p>
+		</div>
+		<div class="buttonBlock">
+			<a href="square.html"><img src="img/04.png" class="img2"></a>
+			<a href="square.html"><h3 class="buttonText">ПЕРЕВОД ПЛОЩАДИ<h3></a>
+			<p></p>
+		</div>
+		<div class="buttonBlock">
+			<a href="amount of information.html"><img src="img/05.png" class="img2"></a>
+			<a href="amount of information.html"><h3 class="buttonText">ПЕРЕВОД ОБЪЁМА ИНФОРМАЦИИ<h3></a>
+			<p></p>
+		</div>
+		<div class="buttonBlock">
+			<a href="temperature.html"><img src="img/08.png" class="img2"></a>
+			<a href="temperature.html"><h3 class="buttonText">ПЕРЕВОД ТЕМПЕРАТУРЫ<h3></a>
+			<p></p>
+		</div>
+		<div class="buttonBlock">
+			<a href="time.html"><img src="img/09.png" class="img2"></a>
+			<a href="time.html"><h3 class="buttonText">ПЕРЕВОД ВРЕМЕНИ<h3></a>
+			<p></p>
+		</div>
+		<div class="buttonBlock">
+			<a href="weight.html"><img src="img/10.png" class="img2"></a>
+			<a href="weight.html"><h3 class="buttonText">ПЕРЕВОД МАССЫ<h3></a>
+			<p></p>
+		</div>
+		<div class="buttonBlock">
+			<a href="speed.html"><img src="img/11.png" class="img2"></a>
+			<a href="speed.html"><h3 class="buttonText">ПЕРЕВОД СКОРОСТИ<h3></a>
+			<p></p>
+		</div>
+	</div>
+	<script src="scripts/jquery.js" ></script>
+	<script>
+		$('.buttonBlock').hover( 
+			function(){ $(this).addClass('animated shake')}, 
+			function(){ $(this).removeClass('animated shake') } 
+		)
+		$(document).ready(function(){$('.logo').addClass('animated pulse')});
+		$(document).ready(function(){$('.siteDescription').addClass('animated pulse')});
+	</script>
+  </body>
+</html>
