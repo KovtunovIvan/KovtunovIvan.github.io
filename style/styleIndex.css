@@ -98,6 +98,7 @@ a{
 	}
 	.headerWrap{
 		padding-bottom:0px;
+		min-width:0px;
 	}
 }
 @media screen and (min-width: 499px){ /* это стили, которые применяюся на экранах с разрешением больше 500 пикселей */
