@@ -91,9 +91,11 @@ a{
 	.mobile{
 		display: block; /* показываем все элементы, которые мы сделали для мобильной версии */
 	}
+	.header{
+		padding:30px;
+	}
 	.headerWrap{
-		width:100%;
-		padding:10% 10% 10% 5% ;	
+		padding-bottom:0px;
 	}
 }
 @media screen and (min-width: 499px){ /* это стили, которые применяюся на экранах с разрешением больше 500 пикселей */
