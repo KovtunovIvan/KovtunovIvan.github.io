@@ -109,3 +109,6 @@ a{
 		display: none; /* скрываем все элементы которые отображаются на мобильных экранах */
 	}
 }
+.buttonBlock a{
+	outline:none !important;
+}
