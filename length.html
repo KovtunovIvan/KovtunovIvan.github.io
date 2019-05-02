@@ -77,30 +77,30 @@
 						case '1':  
 							var endInput = startInput*0.1;
 							$("#endInput").val(endInput);
-							$("#formula").text("миллиметры*0.1");
+							<!-- $("#formula").text("миллиметры*0.1"); -->
 						break
 						case '2':  
 							var endInput = startInput*0.001;
 							$("#endInput").val(endInput);
 						break
 						case '3':  
-							var endInput = startInput*0.000001;
+							var endInput = startInput/1000000;
 							$("#endInput").val(endInput);
 						break
 						case '4':  
-							var endInput = startInput*6.214*1/10000000;
+							var endInput = startInput*0.00000062137119223733;
 							$("#endInput").val(endInput);
 						break
 						case '5':  
-							var endInput = startInput*0.00109361;
+							var endInput = startInput*10936133/10000000000;
 							$("#endInput").val(endInput);
 						break
 						case '6':  
-							var endInput = startInput*0.00328084;
+							var endInput = startInput*0.0032808399;
 							$("#endInput").val(endInput);
 						break
 						case '7':  
-							var endInput = startInput/25.4;
+							var endInput = startInput*0.03937007874;
 							$("#endInput").val(endInput);
 						break
 					}
@@ -186,7 +186,7 @@
 				case '3':  
 					switch(endSelect){
 						case '0':  
-							var endInput = startInput*0.000001;
+							var endInput = startInput/1000000;
 							$("#endInput").val(endInput);
 						break
 						case '1':  
