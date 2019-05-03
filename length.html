@@ -21,7 +21,7 @@
 		  <li class="active">Длина</li>
 		</ol>
 		<div style="width:45%;float:left;"><!-- задает ширину списка(выделенной для него рамки) -->
-			<input type="number" class="form-control" value="" ID="startInput"><!-- input type="number" обозначает тип входящего элемента(числа в одной величине).class="form-control" задает шаблон 
+			<input type="number" min="-999999999999999" max="999999999999999" class="form-control" value="" ID="startInput"><!-- input type="number" обозначает тип входящего элемента(числа в одной величине).class="form-control" задает шаблон 
 			списка с величинами.ID="startInput" входящим элементам(числам) дается имя(в программе) startInput.Атрибут value отвечает за начальное значение,
 			и так как в программе пустое место так же и на сайте(дабы сразу было видно куда вбивать) -->
 			<select class="form-control" ID="startSelect"><!-- Тег <select> позволяет создать элемент интерфейса в виде раскрывающегося списка,элементам в программе дается имя startSelect -->
@@ -77,7 +77,6 @@
 						case '1':  
 							var endInput = startInput*1/10;
 							$("#endInput").val(endInput);
-							$("#formula").text("миллиметры*0.1");
 						break
 						case '2':  
 							var endInput = startInput*1/1000;
