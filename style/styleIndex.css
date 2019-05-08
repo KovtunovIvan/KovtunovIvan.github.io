@@ -118,3 +118,4 @@ a{
 	outline:none !important;/* Универсальное свойство, одновременно устанавливающее цвет, стиль и толщину внешней границы на всех четырех сторонах элемента. */
 	-webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-tap-highlight-color: transparent; 
 }
+
