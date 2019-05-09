@@ -34,7 +34,7 @@ body {/* Параметры для сайта в общем */
 	margin-right:20px;/* Устанавливает величину отступа от правого края элемента. */
 }
 .mainPart{
-	width:70%;
+	width:75%;
 	min-width:660px;
 	margin:0px auto 10px;
 }
@@ -44,9 +44,12 @@ body {/* Параметры для сайта в общем */
 	background-color:#ecf0f0;	
 	width:30%;
 	margin:20px 1.5% 20px;
+	-webkit-box-shadow: 3px 3px 13px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    3px 3px 13px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         3px 3px 13px 0px rgba(50, 50, 50, 0.75);
 }
 .img2{
-	width:110px;
+	width:130px;
 	height:auto;
 	padding:30px;
 	text-align:center;
